@@ -21,7 +21,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test Mode - not implemented yet"
+        android:text="Test Mode"
         android:id="@+id/checkTestMode"
         android:layout_gravity="left|bottom"
         android:layout_marginTop="0dp"

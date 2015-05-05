@@ -18,6 +18,7 @@ public class CardsPage extends ActionBarActivity {
     public int       grade                = 0;
     public int       numberOfCardsInGrade = 0;
     public Boolean   randomOrder          = false;
+    public Boolean   testMode             = false;
     public int       currentItem          = 1;
     public String[]  kanjiList;
     public String[]  translationList;
@@ -30,10 +31,11 @@ public class CardsPage extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cards_page);
         //receive intent
-        Intent intent = getIntent();
-        grade = intent.getIntExtra("grade", 1);
+        Intent intent        = getIntent();
+        grade                = intent.getIntExtra("grade", 1);
         numberOfCardsInGrade = intent.getIntExtra("numCards", 0);
-        randomOrder = intent.getBooleanExtra("random", false);
+        randomOrder          = intent.getBooleanExtra("random", false);
+        testMode             = intent.getBooleanExtra("testMode", false);
         setupLists(grade);
         //set up indexList
         indexList = new Integer[numberOfCardsInGrade];
@@ -44,8 +46,12 @@ public class CardsPage extends ActionBarActivity {
             Collections.shuffle(Arrays.asList(indexList));
         }
         TextView textViewGrade = (TextView) findViewById(R.id.textViewGrade);
-        textViewGrade.setText("" + grade);
+        textViewGrade.setText("Grade: " + grade);
 
+        if (testMode) {
+            TextView kanji = (TextView) findViewById(R.id.textViewKanji);
+            kanji.setClickable(true);
+        }
         updateScreen();
 
     }
@@ -142,8 +148,29 @@ public class CardsPage extends ActionBarActivity {
         translation.setText(translationList[indexList[currentItem-1].intValue()]);
         TextView curretKanjiNumber = (TextView) findViewById(R.id.textViewCurrentKanjiNumber);
         curretKanjiNumber.setText("" + currentItem + " / " + numberOfCardsInGrade);
+        if (testMode) {
+            hideCard();
+        }
 
 
+    }
+
+    public void hideCard() {
+        TextView kunyomi = (TextView) findViewById(R.id.textViewKunyomi);
+        kunyomi.setVisibility(View.INVISIBLE);
+        TextView onyomi  = (TextView) findViewById(R.id.textViewOnyomi);
+        onyomi.setVisibility(View.INVISIBLE);
+        TextView translation = (TextView) findViewById(R.id.textViewTranslation);
+        translation.setVisibility(View.INVISIBLE);
+    }
+
+    public void revealCard(View v) {
+        TextView kunyomi = (TextView) findViewById(R.id.textViewKunyomi);
+        kunyomi.setVisibility(View.VISIBLE);
+        TextView onyomi  = (TextView) findViewById(R.id.textViewOnyomi);
+        onyomi.setVisibility(View.VISIBLE);
+        TextView translation = (TextView) findViewById(R.id.textViewTranslation);
+        translation.setVisibility(View.VISIBLE);
     }
 
 }
