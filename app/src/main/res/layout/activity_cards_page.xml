@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textViewKanji"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="100dp"
+        android:text="中"
+        android:textSize="120dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prev"
+        android:id="@+id/buttonPrev"
+        android:layout_gravity="left|bottom"
+        android:onClick="onPressPrev" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/buttonNext"
+        android:layout_gravity="right|bottom"
+        android:onClick="onPressNext"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grade: "
+        android:id="@+id/textViewGrade"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="eng"
+        android:id="@+id/textViewTranslation"
+        android:layout_gravity="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/0"
+        android:id="@+id/textViewCurrentKanjiNumber"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kunyomi: "
+        android:id="@+id/textViewKunyomi"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:layout_marginLeft="120dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Onyomi: "
+        android:id="@+id/textViewOnyomi"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginTop="80dp"
+        android:textStyle="italic"
+        android:password="false"
+        android:phoneNumber="false"
+        android:singleLine="false"
+        android:gravity="left"
+        android:layout_marginLeft="120dp" />
+</FrameLayout>
