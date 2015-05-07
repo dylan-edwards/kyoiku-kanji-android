@@ -82,4 +82,5 @@
         android:singleLine="false"
         android:gravity="left"
         android:layout_marginLeft="120dp" />
+
 </FrameLayout>

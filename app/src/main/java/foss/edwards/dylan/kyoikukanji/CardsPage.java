@@ -1,6 +1,7 @@
 package foss.edwards.dylan.kyoikukanji;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -17,8 +18,9 @@ public class CardsPage extends ActionBarActivity {
 
     public int       grade                = 0;
     public int       numberOfCardsInGrade = 0;
-    public Boolean   randomOrder          = false;
-    public Boolean   testMode             = false;
+    public boolean   randomOrder          = false;
+    public boolean   testMode             = false;
+    public boolean   biteSize             = false;
     public int       currentItem          = 1;
     public String[]  kanjiList;
     public String[]  translationList;
@@ -36,6 +38,10 @@ public class CardsPage extends ActionBarActivity {
         numberOfCardsInGrade = intent.getIntExtra("numCards", 0);
         randomOrder          = intent.getBooleanExtra("random", false);
         testMode             = intent.getBooleanExtra("testMode", false);
+        biteSize             = intent.getBooleanExtra("biteSize", false);
+
+        //TODO biteSize
+
         setupLists(grade);
         //set up indexList
         indexList = new Integer[numberOfCardsInGrade];
@@ -45,6 +51,12 @@ public class CardsPage extends ActionBarActivity {
         if (randomOrder) {
             Collections.shuffle(Arrays.asList(indexList));
         }
+        if (biteSize) {
+            //get shared prefs and set numberofCards to biteSize size
+            SharedPreferences biteSizeSaves = getSharedPreferences("bite_size", 0);
+            numberOfCardsInGrade = biteSizeSaves.getInt("biteSize", 10);
+        }
+
         TextView textViewGrade = (TextView) findViewById(R.id.textViewGrade);
         textViewGrade.setText("Grade: " + grade);
 

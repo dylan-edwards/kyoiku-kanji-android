@@ -16,7 +16,8 @@
         android:text="Random Order"
         android:id="@+id/randomOrderCheckbox"
         android:layout_gravity="left|bottom"
-        android:checked="false" />
+        android:checked="false"
+        android:layout_marginBottom="30dp" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -25,67 +26,80 @@
         android:id="@+id/checkTestMode"
         android:layout_gravity="left|bottom"
         android:layout_marginTop="0dp"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginBottom="60dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bite Size"
+        android:id="@+id/checkBoxBiteSized"
+        android:layout_gravity="left|bottom" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Grade 1"
         android:id="@+id/buttonGrade1"
         android:layout_gravity="left|top"
         android:tag="1"
-        android:onClick="nextScreen"/>
+        android:onClick="nextScreen"
+        android:textSize="18dp" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Grade 2"
         android:id="@+id/buttonGrade2"
         android:layout_gravity="left|top"
         android:layout_marginTop="50dp"
         android:tag="2"
-        android:onClick="nextScreen" />
+        android:onClick="nextScreen"
+        android:textSize="18dp" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Grade 3"
         android:id="@+id/buttonGrade3"
         android:layout_gravity="left|top"
         android:layout_marginTop="100dp"
         android:tag="3"
-        android:onClick="nextScreen" />
+        android:onClick="nextScreen"
+        android:textSize="18dp" />
 
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Grade 4"
         android:id="@+id/buttonGrade4"
         android:layout_gravity="left|top"
         android:layout_marginTop="150dp"
         android:tag="4"
-        android:onClick="nextScreen" />
+        android:onClick="nextScreen"
+        android:textSize="18dp" />
 
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Grade 5"
         android:id="@+id/buttonGrade5"
         android:layout_gravity="left|top"
         android:layout_marginTop="200dp"
         android:tag="5"
-        android:onClick="nextScreen" />
+        android:onClick="nextScreen"
+        android:textSize="18dp" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Grade 6"
         android:id="@+id/buttonGrade6"
         android:layout_gravity="left|top"
         android:layout_marginTop="250dp"
         android:tag="6"
-        android:onClick="nextScreen" />
+        android:onClick="nextScreen"
+        android:textSize="18dp" />
 
 </FrameLayout>

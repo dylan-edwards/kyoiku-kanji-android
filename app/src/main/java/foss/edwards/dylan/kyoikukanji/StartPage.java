@@ -37,6 +37,11 @@ public class StartPage extends ActionBarActivity {
         if (id == R.id.action_about) {
             return true;
         }
+        if (id == R.id.action_set_bite_size) {
+            Intent intent = new Intent(this, SetBiteSize.class);
+            startActivity(intent);
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -48,13 +53,22 @@ public class StartPage extends ActionBarActivity {
         boolean randomOrder      = randomCheck.isChecked();
         CheckBox checkTestMode   = (CheckBox) findViewById(R.id.checkTestMode);
         boolean testMode         = checkTestMode.isChecked();
+        CheckBox checkBiteSize   = (CheckBox) findViewById(R.id.checkBoxBiteSized);
+        boolean biteSize         = checkBiteSize.isChecked();
         int numberOfCardsInGrade = cardsInGradeList[grade - 1];
 
         Intent intent = new Intent(this, CardsPage.class);
         intent.putExtra("grade", grade);
         intent.putExtra("numCards", numberOfCardsInGrade);
-        intent.putExtra("random", randomOrder);
         intent.putExtra("testMode", testMode);
+        if (biteSize) {
+            intent.putExtra("random", true);
+            intent.putExtra("biteSize", biteSize);
+        } else if (!biteSize) {
+            intent.putExtra("random", randomOrder);
+            intent.putExtra("biteSize", biteSize);
+        }
+
 
         startActivity(intent);
 
