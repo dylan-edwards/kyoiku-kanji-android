@@ -40,8 +40,6 @@ public class CardsPage extends ActionBarActivity {
         testMode             = intent.getBooleanExtra("testMode", false);
         biteSize             = intent.getBooleanExtra("biteSize", false);
 
-        //TODO biteSize
-
         setupLists(grade);
         //set up indexList
         indexList = new Integer[numberOfCardsInGrade];

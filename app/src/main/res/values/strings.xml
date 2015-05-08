@@ -2,6 +2,10 @@
     <string name="app_name">Kyoiku Kanji</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_cards_page">CardsPage</string>
+    <string name="version">0.3.1</string>
+    <string name="dev_email">d.edwards0118@gmail.com</string>
+    <string name="dev_name">D Edwards</string>
+    <string name="web_address">https://github.com/dylan-edwards/kyoiku-kanji-android</string>
 
     <string-array name="kanjiList1">
         <item>一</item>

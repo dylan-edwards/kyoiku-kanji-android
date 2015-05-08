@@ -1,5 +1,7 @@
 package foss.edwards.dylan.kyoikukanji;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -7,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 
 public class StartPage extends ActionBarActivity {
@@ -35,6 +38,14 @@ public class StartPage extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
+            String[] aboutInfo = new String[5];
+            aboutInfo[0] = getString(R.string.app_name);
+            aboutInfo[1] = "Version: " + getString(R.string.version);
+            aboutInfo[2] = "Developer: " + getString(R.string.dev_name);
+            aboutInfo[3] = "Email: " + getString(R.string.dev_email);
+            aboutInfo[4] = "Code: "  + getString(R.string.web_address);
+            String aboutMessage = aboutInfo[0] + "\n" + aboutInfo[1] + "\n" + aboutInfo[2] + "\n" + aboutInfo[3] + "\n" + aboutInfo[4] + "\n";
+            about(aboutMessage);
             return true;
         }
         if (id == R.id.action_set_bite_size) {
@@ -68,9 +79,23 @@ public class StartPage extends ActionBarActivity {
             intent.putExtra("random", randomOrder);
             intent.putExtra("biteSize", biteSize);
         }
-
-
         startActivity(intent);
+    }
 
+    public void about(String aboutMessage) {
+        //TODO about dialog
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("About");
+        final TextView textView = new TextView(this);
+        textView.setText(aboutMessage);
+        builder.setView(textView);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
     }
 }

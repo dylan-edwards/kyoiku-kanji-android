@@ -1,6 +1,5 @@
 package foss.edwards.dylan.kyoikukanji;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -54,13 +53,11 @@ public class SetBiteSize extends ActionBarActivity {
         SharedPreferences.Editor editor = biteSizeSave.edit();
         editor.putInt("biteSize", newSize);
         editor.commit();
-        Intent intent = new Intent(this, StartPage.class);
-        startActivity(intent);//TODO go back a better way
+        finish();
     }
 
     public void onClickExit(View v) {
-        Intent intent = new Intent(this, StartPage.class);
-        startActivity(intent);//TODO go back a better way
+        finish();
     }
 
 }
